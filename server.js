@@ -1,16 +1,13 @@
-//const { Router } = require('express');
 var express = require('express');
 var app = express();
-//const router = express.Router();
 
 app.get('/', function(req, res) {
-res.redirect('/index.html')
+    res.send('Yeah!')
 });
 
-app.post('/valider', function(req, res, next){
-    console.log("on y arrive ? valider");
-    var nom = req.query.name;
-    res.write("test nom : " + nom); 
+app.get('/hello', function(req, res, next){
+    var name = req.query.name;
+    res.write("Bonjour " + name + " ... Vous etes bien matinal ..."); 
     res.send();   
 } )
 
